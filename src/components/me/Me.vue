@@ -54,29 +54,83 @@
 </template>
 
 <script>
-    import axios from 'axios'
+    // import axios from 'axios'
     export default {
         name: "Me",
         data() {
             return {
-                form: [],
-                lists: []
+                form: [
+                    {
+                        content: "朋友圈",
+                        icon: "#icon-pengyouquan"
+                    },
+                    {
+                        content: "扫一扫",
+                        icon: "#icon-saoyisao"
+                    },
+                    {
+                        content: "游戏",
+                        icon: "#icon-youxi"
+                    },
+                    {
+                        content: "搜一搜",
+                        icon: "#icon-souyisou"
+                    },
+                    {
+                        content: "附近的人",
+                        icon: "#icon-fujinderen"
+                    },
+                    {
+                        content: "购物",
+                        icon: "#icon-gouwu-"
+                    },
+                    {
+                        content: "小程序",
+                        icon: "#icon-xiaochengxu"
+                    }
+                ],
+                lists: [
+                    {
+                        id: "tab1",
+                        icon: "#icon-weixinxiaoxi",
+                        name: "微信",
+                        link: "Home"
+                    },
+                    {
+                        id: "tab2",
+                        icon: "#icon-tongxunlu-yigai",
+                        name: "通讯录",
+                        link: "Mail"
+                    },
+                    {
+                        id: "tab3",
+                        icon: "#icon-faxian3",
+                        name: "发现",
+                        link: "Find"
+                    },
+                    {
+                        id: "tab4",
+                        icon: "#icon-wo2",
+                        name: "我",
+                        link: "Me"
+                    }
+                ]
             }
         },
         methods: {
             jump(link) {
                 this.$router.push({name: link});
             },
-            getData(){
-                axios.get('/js/me.json').then((res) =>{
-                    this.form = res.data.form;
-                    this.lists = res.data.lists
-                })
-            }
+            // getData(){
+            //     axios.get('/js/me.json').then((res) =>{
+            //         this.form = res.data.form;
+            //         this.lists = res.data.lists
+            //     })
+            // }
         },
-        mounted() {
-            this.getData()
-        }
+        // mounted() {
+        //     this.getData()
+        // }
     }
 </script>
 

@@ -75,11 +75,12 @@ span,div,ul,li{
 .main-item-time {
     float: right;
     margin-top: .06rem;
-    font-size: .14rem;
+    font-size: .12rem;
 }
 
 .main-item-home {
-    margin-top: .06rem;
+    margin-top: .08rem;
+    font-size: .14rem;
 }
 
 /*底部*/

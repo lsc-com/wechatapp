@@ -3,5 +3,5 @@ module.exports = {
         host: 'localhost',
         open: true,
     },
-    publicPath: './'
+    publicPath: './',
 };

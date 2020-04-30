@@ -94,6 +94,8 @@
     }
 
     .adv_begin {
+        height: 100%;
+        width: 100%;
         color: aliceblue;
         background: url(../../public/imgs/adv.jpg) no-repeat;
         background-size: cover;
