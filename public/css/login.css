@@ -1,0 +1,30 @@
+html {
+    font-size: 26.6666666666667vw;
+}
+
+body {
+    font-size: .14rem;
+}
+
+.login{
+    height: 100%;
+    background: white;
+}
+
+.outer {
+    font-weight: 400;
+    text-align: center;
+    padding-top: 1rem;
+    background: white;
+}
+
+.icon>a {
+    color: #333;
+}
+
+.login-title {
+    display: block;
+    font-size: .28rem;
+    margin-bottom: .3rem;
+}
+

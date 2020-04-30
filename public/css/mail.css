@@ -1,0 +1,42 @@
+.mail {
+    height: 100%;
+}
+.header-search{
+    width: .2rem;
+    height: .2rem;
+}
+.mail-main-top-item {
+    float: left;
+    height: .35rem;
+    width: .35rem;
+    margin: .1rem 0;
+}
+
+.mail-top-content {
+    display: block;
+    margin-left: .1rem;
+    color: #333333;
+}
+
+.mint-indexlist {
+    height: 100%;
+}
+
+.mint-indexlist-content {
+    height: 100% !important;
+}
+
+.mint-indexlist-content {
+    width: 100%;
+}
+
+.mint-indexlist-nav {
+    background-color: #33333300;
+    border: none;
+}
+.mail-img{
+    width: .3rem;
+    height: .3rem;
+    margin: .05rem 0;
+    border-radius: .05rem;
+}

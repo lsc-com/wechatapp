@@ -1,0 +1,67 @@
+/*我的*/
+.me-main{
+    height: calc(100% - .6rem);
+}
+.main-me{
+    height: .6rem;
+    padding: .3rem .1rem;
+    background: white;
+}
+.main-me-img{
+    display: block;
+    float: left;
+    height: 100%;
+    border-radius: .05rem;
+    margin-left: .1rem;
+}
+.main-me-right{
+    width: 70%;
+    height: 100%;
+    float: left;
+    padding: .05rem 0;
+    margin-left: .1rem;
+}
+.main-me-name{
+    display: block;
+    float: left;
+    width: 100%;
+    font-size: .2rem;
+    margin-bottom: .1rem;
+}
+.main-me-num{
+    display: block;
+    float: left;
+    font-size: .14rem;
+    color: #666666;
+}
+.find-item-right{
+    float: right;
+}
+.me-item{
+    width: 100%;
+    height: 100%;
+}
+.me-item-icon{
+    display: block;
+    float: left;
+    height: 100%;
+    margin: .14rem .2rem 0 .2rem;
+}
+.me-item-title{
+    line-height: .48rem;
+}
+.me-item-right{
+    line-height: .48rem;
+    float: right;
+    margin-right: .28rem;
+}
+.me-clear{
+    display: block;
+    height: .1rem;
+    width: 100%;
+    background-color: #ededed;
+}
+.me-item{
+    width: 100%;
+    margin-top: -.01rem;
+}
