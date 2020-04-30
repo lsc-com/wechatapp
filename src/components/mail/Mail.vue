@@ -21,10 +21,10 @@
                     {{msg.title}}
                 </span>
                 </mt-cell-swipe>
-                <mt-index-section :index="item.Letter" :key="item.id" v-for="item in section" @click.native="mailDetails(item)">
-                    <mt-cell title>
-                        <img :src="item.image" class="mail-img"  style="border-radius: 5px;"/>
-                        <span style="margin-left: .1rem;color: #333333">{{item.name}}</span>
+                <mt-index-section :index= "item.Letter" :key="item.id" v-for="item in section" @click.native="mailDetails(item)">
+                    <mt-cell title v-for="mail in item.sub" :key="mail.id">
+                        <img :src="mail.image" class="mail-img"  style="border-radius: 5px;"/>
+                        <span style="margin-left: .1rem;color: #333333">{{mail.name}}</span>
                     </mt-cell>
                 </mt-index-section>
             </mt-index-list>
@@ -94,61 +94,130 @@
                         link: "Me"
                     }
                 ],
-                "section": [
+                section: [
                     {
-                        image: require("../../../public/imgs/tx/al.jpg"),
-                        name: "艾伦",
-                        Letter: "A"
+                        Letter: "A",
+                        sub: [
+                            {
+                                image: require("../../../public/imgs/tx/al.jpg"),
+                                name: "艾伦",
+                            },
+                        ],
                     },
                     {
-                        image: require("../../../public/imgs/tx/bz.jpg"),
-                        name: "B站",
-                        Letter: "B"
+                        Letter: "B",
+                        sub: [
+                            {
+                                image: require("../../../public/imgs/tx/bz.jpg"),
+                                name: "bilibili",
+                            }
+                        ]
                     },
                     {
                         Letter: "C",
-                        image: require("../../../public/imgs/tx/ch.jpg"),
-                        name: "陈赫"
+                        sub: [
+                            {
+                                image: require("../../../public/imgs/tx/cf.jpg"),
+                                name: "陈峰",
+                            },
+                            {
+                                image: require("../../../public/imgs/tx/ch.jpg"),
+                                name: "陈赫",
+                            },
+                            {
+                                image: require("../../../public/imgs/tx/cyx.jpg"),
+                                name: "陈妍希",
+                            },
+                        ]
                     },
                     {
-                        image: require("../../../public/imgs/tx/dl.jpg"),
-                        name: "大力(小宝贝)",
-                        Letter: "D"
+                        Letter: "D",
+                        sub: [
+                            {
+                                image: require("../../../public/imgs/tx/dl.jpg"),
+                                name: "大力",
+                            }
+                        ]
                     },
                     {
-                        image: require("../../../public/imgs/tx/er.jpg"),
-                        name: "二狗子",
-                        Letter: "E"
+                        Letter: "E",
+                        sub: [
+                            {
+                                image: require("../../../public/imgs/tx/er.jpg"),
+                                name: "二狗子",
+                            }
+                        ]
+                    },
+                    {
+                        Letter: "H",
+                        sub: [
+                            {
+                                image: require("../../../public/imgs/tx/hyf.jpg"),
+                                name: "胡一菲",
+                            }
+                        ]
                     },
                     {
                         Letter: "J",
-                        image: require("../../../public/imgs/tx/jw.jpg"),
-                        name: "建文"
+                        sub: [
+                            {
+                                image: require("../../../public/imgs/tx/jw.jpg"),
+                                name: "建文",
+                            }
+                        ]
                     },
                     {
                         Letter: "L",
-                        image: require("../../../public/imgs/tx/c.jpg"),
-                        name: "路人王(葱)"
+                        sub: [
+                            {
+                                image: require("../../../public/imgs/tx/lzq.jpg"),
+                                name: "吕子乔",
+                            },
+                            {
+                                image: require("../../../public/imgs/tx/c.jpg"),
+                                    name: "路人王北航(葱)",
+                            }
+                        ]
                     },
                     {
-                        image: require("../../../public/imgs/tx/mmf.jpg"),
-                        name: "美貌与智慧并存的菲菲姐姐",
-                        Letter: "M"
+                        Letter: "M",
+                        sub: [
+                            {
+                                image: require("../../../public/imgs/tx/mj.jpg"),
+                                name: "美嘉",
+                            },
+                            {
+                                image: require("../../../public/imgs/tx/mmf.jpg"),
+                                name: "美貌与智慧并存的菲菲姐姐",
+                            }
+                        ]
                     },
                     {
                         Letter: "W",
-                        image: require("../../../public/imgs/tx/yl.jpg"),
-                        name: "万恶的资本家琳姐"
+                        sub: [
+                            {
+                                image: require("../../../public/imgs/tx/yl.jpg"),
+                                name: "万恶的资本家琳姐"
+                            }
+                        ]
                     },
                     {
                         Letter: "Y",
-                        image: require("../../../public/imgs/tx/me.jpg"),
-                        name: "遗失"
+                        sub: [
+                            {
+                                image: require("../../../public/imgs/tx/me.jpg"),
+                                name: "遗失"
+                            }
+                        ]
                     },
                     {
                         Letter: "Z",
-                        image: require("../../../public/imgs/tx/zw.jpg"),
-                        name: "张伟"
+                        sub: [
+                            {
+                                image: require("../../../public/imgs/tx/zw.jpg"),
+                                name: "张伟"
+                            }
+                        ]
                     }
                 ]
             }

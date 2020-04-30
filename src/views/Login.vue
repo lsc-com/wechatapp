@@ -5,9 +5,9 @@
         </div>
         <div class="outer">
             <span class="login-title">登录</span>
-                <input placeholder="请输入用户名" type="text" v-model="form.username"><br>
-                <input placeholder="请输入密码" type="password" v-model="form.password"><br>
-                <div class="login-btn" @click="login">登录</div>
+            <input placeholder="请输入用户名" type="text" v-model="form.username"><br>
+            <input placeholder="请输入密码" type="password" v-model="form.password"><br>
+            <div class="login-btn" @click="login">登录</div>
         </div>
     </div>
 </template>

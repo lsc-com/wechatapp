@@ -1,7 +1,7 @@
 <template>
     <div class="home">
         <div class="header">
-            <span class="head-title">微信</span>
+            <span class="head-title">微信{{test}}</span>
             <span class="search-add">
                 <i class="iconfont icon-sousuo"></i>
                 <i class="iconfont icon-tianjia"></i>
@@ -9,6 +9,7 @@
         </div>
         <div class="main">
             <mt-cell-swipe
+                    @click.native="chat(msg)"
                     :key="msg.id"
                     :right="rightButtons"
                     v-for="msg in form">
@@ -38,14 +39,15 @@
 </template>
 
 <script>
-    // import axios from 'axios'
+    import axios from 'axios'
     export default {
         name: "Home",
         data() {
             return {
+                test: '',
                 form: [
                     {
-                        title: "大力",
+                        title: "大力(小宝贝)",
                         content: "爱你哟宝贝！",
                         image: require("../../../public/imgs/tx/dl.jpg"),
                         time: "刚刚"
@@ -69,7 +71,7 @@
                         time: "晚上9:00"
                     },
                     {
-                        title: "Bilibli",
+                        title: "bilibili",
                         content: "投稿通过了哟！",
                         image: require("../../../public/imgs/tx/bz.jpg"),
                         time: "晚上8:28"
@@ -152,45 +154,23 @@
             jumpToNeed(link) {
                 this.$router.push({name: link});
             },
-            // getData() {
-            //     axios.get('/js/home.json').then((res) =>{
-            //         this.form = res.data.form
-            //         this.lists = res.data.lists
-            //     })
-            // }
-            test() {
-                document.addEventListener('plusready', function() {
-                    let plus;
-                    var webview = plus.webview.currentWebview();
-                    plus.key.addEventListener('backbutton', function() {
-                        webview.canBack(function(e) {
-                            if(e.canBack) {
-                                webview.back();
-                            } else {
-                                //webview.close(); //hide,quit
-                                //plus.runtime.quit();
-                                //首页返回键处理
-                                //处理逻辑：1秒内，连续两次按返回键，则退出应用；
-                                var first = null;
-                                plus.key.addEventListener('backbutton', function() {
-                                    //首次按键，提示‘再按一次退出应用’
-                                    if (!first) {
-                                        first = new Date().getTime();
-                                        console.log('再按一次退出应用');
-                                        setTimeout(function() {
-                                            first = null;
-                                        }, 1000);
-                                    } else {
-                                        if (new Date().getTime() - first < 1500) {
-                                            plus.runtime.quit();
-                                        }
-                                    }
-                                }, false);
-                            }
-                        })
-                    });
-                });
+            getData() {
+                axios.get('http://rap2.taobao.org:38080/app/mock/252840/WeChat/Home').then((res) =>{
+                    this.test = res.data.test
+                })
+            },
+            chat(value){
+                console.log(value)
+
+                this.$router.push({name: 'Chat',query: {
+                    name: value.title,
+                    img: value.image,
+                    content: value.content
+                }});
             }
+        },
+        mounted() {
+            this.getData()
         }
     }
 </script>
