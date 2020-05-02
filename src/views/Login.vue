@@ -5,8 +5,8 @@
         </div>
         <div class="outer">
             <span class="login-title">登录</span>
-            <input placeholder="请输入用户名" type="text" v-model="form.username"><br>
-            <input placeholder="请输入密码" type="password" v-model="form.password"><br>
+            <input placeholder="请输入用户名" type="text" v-model="username"><br>
+            <input placeholder="请输入密码" type="password" v-model="password"><br>
             <div class="login-btn" @click="login">登录</div>
         </div>
     </div>
@@ -25,10 +25,8 @@
                 a: true,  //控制广告显示隐藏
                 time: 5,  //广告时间
                 timer: null, //清除计时器
-                form: {
-                    username: '',
-                    password: ''
-                },
+                username: '',
+                password: ''
             }
         },
         methods: {
@@ -50,11 +48,17 @@
                 clearInterval(this.timer);
             },
             login() {
-                const _form = this.form
-                axios.post('http://rap2.taobao.org:38080/app/mock/250463/Run/DoLogin',_form).then((res) =>{
+                const _this = this
+                axios.post('http://rap2.taobao.org:38080/app/mock/252840/WeChat/Login',{
+                    username: this.username,
+                    password: this.password
+                }).then((res) =>{
                     console.log(res)
+                    console.log(_this.username)
                         if (res.data.token == "true"){
-                            Toast('登录成功');
+                            Toast({
+                                message: '登录成功',
+                                duration: 1000});
                             this.$router.push("/home");
                         }else {
                             Toast('用户名密码不匹配');
