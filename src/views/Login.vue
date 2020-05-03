@@ -65,9 +65,64 @@
                         }
                 })
             },
+            test() {
+                var allCollege = [
+                    { cid: 1, cname: "信息工程学院" },
+                    { cid: 2, cname: "康复学院" },
+                    { cid: 3, cname: "护理学院" }
+                ]
+                var allGrade = [
+                    { cid: 1, gid: 1, grade: 2018 },
+                    { cid: 1, gid: 2, grade: 2019 },
+                    { cid: 1, gid: 3, grade: 2020 },
+                    { cid: 2, gid: 1, grade: 2018 },
+                    { cid: 2, gid: 2, grade: 2019 },
+                    { cid: 2, gid: 3, grade: 2020 },
+                    { cid: 3, gid: 1, grade: 2018 },
+                    { cid: 3, gid: 2, grade: 2019 },
+                    { cid: 3, gid: 3, grade: 2020 }
+                ]
+                var allClass = [
+                    { cid: 1, gid: 1, clid: 1, classes: "18物联网" },
+                    { cid: 1, gid: 1, clid: 1, classes: "18生工" },
+                    { cid: 1, gid: 1, clid: 1, classes: "18生信" }
+                ]
+
+
+
+                var colleges = []
+                // var grades
+                // var classes
+                console.log(allCollege[0].cid)
+                console.log(allCollege.length)
+                for (var i = 0; i < allCollege.length; i++) {
+                    for (var j = 0; j < allGrade.length;j++) {
+                        if (allCollege[i].cid == allGrade[j].cid) {
+                            var _json = {}
+                            let grade = []
+                            _json.cid = allCollege[i].cid
+                            _json.cname = allCollege[i].cname
+                            _json.grade = grade
+                            grade.grade = allGrade[j].grade
+                            grade.classes = []
+                            colleges.push(_json)
+                            for (var n = 0; n < allClass.length; n++){
+                                if (allGrade[j].cid == allClass[n].cid && allGrade[j].gid == allClass[n].gid){
+                                    grade.classes.push(allClass[n].classes)
+                                }
+                            }
+                            console.log(allCollege[i].cid)
+                            console.log(_json)
+                        }
+
+                    }
+                }
+                console.log(colleges)
+            }
         },
         mounted() {  //生命周期钩子函数 挂载完成
             this.autoPlay();
+            this.test()
         },
         destroyed() {
             clearInterval(this.timer);
@@ -101,8 +156,8 @@
         height: 100%;
         width: 100%;
         color: aliceblue;
-        background: url(../../public/imgs/adv.jpg) no-repeat;
-        background-size: cover;
+        background: url(../../public/imgs/adv.jpg) no-repeat center center;
+        background-size: 100% 100%;
         position: fixed;
         top: 0;
         bottom: 0;
