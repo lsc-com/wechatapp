@@ -17,6 +17,11 @@ const routes = [
         component: Home,
     },
     {
+        path: '/search',
+        name: 'Search',
+        component: () => import('../components/home/Search')
+    },
+    {
         path: '/chat',
         name: 'Chat',
         component: () => import('../components/home/Chat')
@@ -30,6 +35,11 @@ const routes = [
         path: '/mail',
         name: 'Mail',
         component: () => import('../components/mail/Mail')
+    },
+    {
+        path: '/mailIn',
+        name: 'MailIn',
+        component: () => import('../components/mail/MailIn')
     },
     {
         path: '/find',

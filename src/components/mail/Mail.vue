@@ -3,7 +3,7 @@
         <div class="header">
             <span class="head-title">通讯录</span>
             <span class="search-add">
-                <i class="iconfont icon-sousuo"></i>
+                <router-link to="/search"><i class="iconfont icon-sousuo"></i></router-link>
                 <i class="iconfont icon-tianjia"></i>
             </span>
         </div>
@@ -21,8 +21,8 @@
                     {{msg.title}}
                 </span>
                 </mt-cell-swipe>
-                <mt-index-section :index= "item.Letter" :key="item.id" v-for="item in section" @click.native="mailDetails(item)">
-                    <mt-cell title v-for="mail in item.sub" :key="mail.id">
+                <mt-index-section :index= "item.Letter" :key="item.id" v-for="item in section">
+                    <mt-cell title v-for="mail in item.sub" :key="mail.id" @click.native="mailDetails(mail)">
                         <img :src="mail.image" class="mail-img"  style="border-radius: 5px;"/>
                         <span style="margin-left: .1rem;color: #333333">{{mail.name}}</span>
                     </mt-cell>
@@ -101,6 +101,7 @@
                             {
                                 image: require("../../../public/imgs/tx/al.jpg"),
                                 name: "艾伦",
+                                content: "昨天创作的曲子真绝了",
                             },
                         ],
                     },
@@ -110,6 +111,7 @@
                             {
                                 image: require("../../../public/imgs/tx/bz.jpg"),
                                 name: "bilibili",
+                                content: "投稿通过了哟！",
                             }
                         ]
                     },
@@ -119,14 +121,17 @@
                             {
                                 image: require("../../../public/imgs/tx/cf.jpg"),
                                 name: "陈峰",
+                                content: "6啊你",
                             },
                             {
                                 image: require("../../../public/imgs/tx/ch.jpg"),
                                 name: "陈赫",
+                                content: "听说你和大力在一起了？",
                             },
                             {
                                 image: require("../../../public/imgs/tx/cyx.jpg"),
                                 name: "陈妍希",
+                                content: "有女朋友吗/害羞",
                             },
                         ]
                     },
@@ -135,7 +140,8 @@
                         sub: [
                             {
                                 image: require("../../../public/imgs/tx/dl.jpg"),
-                                name: "大力",
+                                name: "大力(小宝贝)",
+                                content: "爱你哟宝贝！",
                             }
                         ]
                     },
@@ -163,6 +169,7 @@
                             {
                                 image: require("../../../public/imgs/tx/jw.jpg"),
                                 name: "建文",
+                                content: "你真是答分几啊！",
                             }
                         ]
                     },
@@ -175,7 +182,8 @@
                             },
                             {
                                 image: require("../../../public/imgs/tx/c.jpg"),
-                                    name: "路人王北航(葱)",
+                                name: "路人王北航(葱)",
+                                content: "就晓得些",
                             }
                         ]
                     },
@@ -189,6 +197,7 @@
                             {
                                 image: require("../../../public/imgs/tx/mmf.jpg"),
                                 name: "美貌与智慧并存的菲菲姐姐",
+                                content: "双皮奶真的是绝了",
                             }
                         ]
                     },
@@ -197,7 +206,8 @@
                         sub: [
                             {
                                 image: require("../../../public/imgs/tx/yl.jpg"),
-                                name: "万恶的资本家琳姐"
+                                name: "万恶的资本家琳姐",
+                                content: "一天天就知道吃",
                             }
                         ]
                     },
@@ -215,7 +225,8 @@
                         sub: [
                             {
                                 image: require("../../../public/imgs/tx/zw.jpg"),
-                                name: "张伟"
+                                name: "张伟",
+                                content: "你赢了，我不配",
                             }
                         ]
                     }
@@ -228,6 +239,12 @@
             },
             mailDetails(value) {
                 console.log(value)
+                    this.$router.push({name: 'MailIn',query: {
+                            name: value.name,
+                            img: value.image,
+                            content: value.content
+                        }});
+
             },
             // getTopForm(){
             //     axios.get('/js/mail.json').then((res) => {
@@ -246,6 +263,9 @@
 
 <style scoped>
     @import '../../../public/css/mail.css';
+    .header{
+        padding: 0 .15rem;
+    }
 
     .icon {
         width: .2rem;

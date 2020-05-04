@@ -40,3 +40,58 @@
     margin: .05rem 0;
     border-radius: .05rem;
 }
+
+/*mail-in*/
+.mail-item{
+    width: 100%;
+    text-align: center;
+}
+.mail-clear{
+    display: block;
+    height: .1rem;
+}
+
+.main-mail{
+    height: .8rem;
+    padding: .1rem 0 .3rem 0;
+    background: white;
+}
+.main-mail-img{
+    display: block;
+    float: left;
+    height: .8rem;
+    width: .8rem;
+    border-radius: .05rem;
+    margin-left: .1rem;
+}
+.main-mail-right{
+    max-width: 60%;
+    height: 100%;
+    float: left;
+    padding: 0 .15rem;
+    margin-left: .1rem;
+}
+.main-mail-name{
+    display: block;
+    float: left;
+    max-width: 100%;
+    line-height: .2rem;
+    font-size: .2rem;
+    margin-bottom: .1rem;
+}
+.main-mail-num{
+    display: block;
+    float: left;
+    width: 100%;
+    font-size: .14rem;
+    color: #666666;
+}
+.mail-item-title{
+    width: 100%;
+    display: block;
+    float: left;
+}
+.mail-item-msg{
+    display: block;
+    float: left;
+}

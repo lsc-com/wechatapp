@@ -6,6 +6,55 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "12740598",
+      "name": "添加朋友",
+      "font_class": "tianjiapengyou1",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "8930423",
+      "name": "取消",
+      "font_class": "quxiao",
+      "unicode": "e646",
+      "unicode_decimal": 58950
+    },
+    {
+      "icon_id": "4414967",
+      "name": "微信消息（线性）",
+      "font_class": "weixinxiaoxixianxing",
+      "unicode": "e64a",
+      "unicode_decimal": 58954
+    },
+    {
+      "icon_id": "6199342",
+      "name": "微信消息（面性）",
+      "font_class": "xiaoxi-2",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "9792422",
+      "name": "消息",
+      "font_class": "xiaoxi1",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "8045302",
+      "name": "男",
+      "font_class": "nan",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    },
+    {
+      "icon_id": "11903119",
+      "name": "女",
+      "font_class": "nv",
+      "unicode": "e6b0",
+      "unicode_decimal": 59056
+    },
+    {
       "icon_id": "4828437",
       "name": "语音",
       "font_class": "yuyin1",

@@ -3,7 +3,7 @@
         <div class="header">
             <span class="head-title">发现</span>
             <span class="search-add">
-                <i class="iconfont icon-sousuo"></i>
+                <router-link to="/search"><i class="iconfont icon-sousuo"></i></router-link>
                 <i class="iconfont icon-tianjia"></i>
             </span>
         </div>
@@ -137,6 +137,9 @@
 
 <style scoped>
     @import '../../../public/css/find.css';
+    .header{
+        padding: 0 .15rem;
+    }
 
     .icon {
         width: .2rem;

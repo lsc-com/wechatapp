@@ -3,7 +3,7 @@
         <div class="header">
             <span class="head-title">微信</span>
             <span class="search-add">
-                <i class="iconfont icon-sousuo"></i>
+                <router-link to="/search"><i class="iconfont icon-sousuo"></i></router-link>
                 <i class="iconfont icon-tianjia"></i>
             </span>
         </div>

@@ -8,6 +8,68 @@
 span,div,ul,li{
     font-size: .16rem;
 }
+/*search*/
+.search-header{
+    float: left;
+    width: calc(100% - .2rem);
+    margin: .2rem .1rem;
+    border-radius: .05rem;
+    background-color: white;
+}
+.search-header1{
+    float: left;
+    width: calc(100% - .7rem);
+    margin: .2rem .1rem;
+    border-radius: .05rem;
+    background-color: white;
+}
+.serach-input{
+    display: block;
+    float: left;
+    height: .4rem;
+    width: calc(100% - 1rem);
+    padding: 0 .1rem;
+}
+.serach-input1{
+    display: block;
+    float: left;
+    height: .4rem;
+    width: calc(100% - 1.5rem);
+    padding: 0 .1rem;
+}
+.clearBtn{
+    display: block;
+    float: left;
+    height: .3rem;
+    width: .5rem;
+    margin-top: .28rem;
+    color: #7b8aa8;
+}
+.serach-item-title{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    width: 50%;
+    color: #04be02;
+}
+.serach-item-title-sou{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    width: 68%;
+    color: #04be02;
+}
+.search-msg{
+    min-height: .5rem;
+    width: 80%;
+    margin: .1rem auto;
+}
+.search-msg span{
+    margin-top: .2rem;
+    width: .6rem;
+    color: #616d87;
+    text-align: center;
+}
 /*头部*/
 .header {
     padding: 0;
@@ -181,7 +243,7 @@ span,div,ul,li{
     margin-top: .1rem;
     padding: .1rem .1rem .12rem .1rem;
     max-width: calc(100% - 1.5rem);
-    background: #fff;
+    background: #95ec69;
     border-radius: .06rem;
 }
 
@@ -194,7 +256,7 @@ span,div,ul,li{
     height: .1rem;
     margin-top: -.1rem;
     border-radius: .02rem;
-    background: #fff;
+    background: #95ec69;
     /*自动继承父元素的背景*/
     transform: rotate(45deg);
 }

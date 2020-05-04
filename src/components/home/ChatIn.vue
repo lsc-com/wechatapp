@@ -9,8 +9,8 @@
         </div>
         <div class="main">
             <div class="main-user">
-                <div>
-                    <img :src="img" alt="">
+                <div @click="mailJum">
+                    <img :src="img">
                     <span>{{name}}</span>
                 </div>
                 <div>
@@ -85,6 +85,13 @@
         methods: {
             goBack() {
                 window.history.go(-1);
+            },
+            mailJum() {
+                this.$router.push({name: 'MailIn',query: {
+                        name: this.name,
+                        img: this.img,
+                        content: this.$route["query"]["content"]
+                    }});
             }
         }
     }
