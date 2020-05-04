@@ -19,16 +19,50 @@
                     </div>
                 </div>
             </div>
-            <span class="find-clear"></span>
             <mt-cell-swipe>
                 <div class="home-item">
-                    <span class="find-item-icon">
-                        <svg aria-hidden="true" class="icon">
-                            <use xlink:href="#icon-pengyouquan"/>
-                        </svg>
-                    </span>
-                    <span class="find-item-title">朋友圈</span>
-                    <i class="iconfont icon-you find-item-right"></i>
+                    <span class="chat-item-title">查找聊天记录</span>
+                    <i class="iconfont icon-you chat-item-right"></i>
+                </div>
+            </mt-cell-swipe>
+            <span class="chat-clear"></span>
+            <mt-cell-swipe>
+                <div class="home-item">
+                    <span class="chat-item-title">消息免打扰</span>
+                    <mt-switch v-model="value1" class="switch-right"></mt-switch>
+                </div>
+            </mt-cell-swipe>
+            <mt-cell-swipe>
+                <div class="home-item">
+                    <span class="chat-item-title">置顶聊天</span>
+                    <mt-switch v-model="value2" class="switch-right"></mt-switch>
+                </div>
+            </mt-cell-swipe>
+            <mt-cell-swipe>
+                <div class="home-item">
+                    <span class="chat-item-title">强提醒</span>
+                    <mt-switch v-model="value3" class="switch-right"></mt-switch>
+                </div>
+            </mt-cell-swipe>
+            <span class="chat-clear"></span>
+            <mt-cell-swipe>
+                <div class="home-item">
+                    <span class="chat-item-title">设置当前聊天背景</span>
+                    <i class="iconfont icon-you chat-item-right"></i>
+                </div>
+            </mt-cell-swipe>
+            <span class="chat-clear"></span>
+            <mt-cell-swipe>
+                <div class="home-item">
+                    <span class="chat-item-title">清空聊天记录</span>
+                    <i class="iconfont icon-you chat-item-right"></i>
+                </div>
+            </mt-cell-swipe>
+            <span class="chat-clear"></span>
+            <mt-cell-swipe>
+                <div class="home-item">
+                    <span class="chat-item-title">投诉</span>
+                    <i class="iconfont icon-you chat-item-right"></i>
                 </div>
             </mt-cell-swipe>
         </div>
@@ -42,6 +76,10 @@
             return {
                 name: this.$route["query"]["name"],
                 img: this.$route["query"]["img"],
+                value1: false,
+                value2: false,
+                value3: false,
+
             }
         },
         methods: {
@@ -58,7 +96,7 @@
         display: block;
         margin: .1rem auto;
         text-align: center;
-        font-size: .4rem;
+        font-size: .4rem !important;
     }
     .icon {
         width: .2rem;
@@ -72,5 +110,8 @@
 
     .iconfont {
         font-size: .18rem;
+    }
+    .mint-switch-core{
+        height: .3rem !important;
     }
 </style>

@@ -1,11 +1,13 @@
 <template>
     <div class="chat">
-        <mt-header title="">
-            <router-link to="" slot="left">
-                <mt-button class="head-title" icon="back" @click="goBack">{{name}}</mt-button>
-            </router-link>
-            <mt-button icon="more" slot="right" @click="information"></mt-button>
-        </mt-header>
+        <div class="header">
+            <mt-header title="">
+                <router-link to="" slot="left">
+                    <mt-button class="head-title" icon="back" @click="goBack">{{name}}</mt-button>
+                </router-link>
+                <mt-button icon="more" slot="right" @click="information"></mt-button>
+            </mt-header>
+        </div>
         <div class="main">
             <div class="main-chat">
                 <img class="main-chat-img" :src="img" alt="" width="30" height="30">

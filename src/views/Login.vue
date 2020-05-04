@@ -149,7 +149,7 @@
         border-radius: 0.03rem;
         font-size: .18rem;
         color: #fff;
-        background-color: #0bbe06;
+        background-color: #04be02;
     }
 
     .adv_begin {

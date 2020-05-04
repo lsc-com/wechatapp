@@ -26,6 +26,7 @@ xmp {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    color: #303133;
 }
 
 body,
@@ -212,3 +213,12 @@ a {
 span,ul,li,p,h1,h2,h3,h4,h5,h6{
     opacity: 1;
 }
+.mint-button-icon{
+    vertical-align: baseline !important;
+}
+.mintui{
+    font-size: .16rem !important;
+}
+.mint-button{
+      height: .4rem !important;
+  }
