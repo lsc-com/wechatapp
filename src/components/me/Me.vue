@@ -11,7 +11,7 @@
                 </div>
             </div>
             <span class="me-clear"></span>
-            <mt-cell-swipe            >
+            <mt-cell-swipe>
                 <div class="me-item">
                     <span class="me-item-icon">
                         <svg aria-hidden="true" class="icon">
@@ -34,6 +34,18 @@
                         </svg>
                     </span>
                     <span class="me-item-title">{{item.content}}</span>
+                    <i class="iconfont icon-you me-item-right"></i>
+                </div>
+            </mt-cell-swipe>
+            <span class="me-clear"></span>
+            <mt-cell-swipe>
+                <div class="me-item">
+                    <span class="me-item-icon">
+                        <svg aria-hidden="true" class="icon">
+                            <use xlink:href="#icon-kejian"/>
+                        </svg>
+                    </span>
+                    <span class="me-item-title">设置</span>
                     <i class="iconfont icon-you me-item-right"></i>
                 </div>
             </mt-cell-swipe>
@@ -61,32 +73,20 @@
             return {
                 form: [
                     {
-                        content: "朋友圈",
-                        icon: "#icon-pengyouquan"
+                        content: "收藏",
+                        icon: "#icon-shoucang"
                     },
                     {
-                        content: "扫一扫",
-                        icon: "#icon-saoyisao"
+                        content: "相册",
+                        icon: "#icon-xiangce"
                     },
                     {
-                        content: "游戏",
-                        icon: "#icon-youxi"
+                        content: "卡包",
+                        icon: "#icon-shouye"
                     },
                     {
-                        content: "搜一搜",
-                        icon: "#icon-souyisou"
-                    },
-                    {
-                        content: "附近的人",
-                        icon: "#icon-fujinderen"
-                    },
-                    {
-                        content: "购物",
-                        icon: "#icon-gouwu-"
-                    },
-                    {
-                        content: "小程序",
-                        icon: "#icon-xiaochengxu"
+                        content: "表情",
+                        icon: "#icon-biaoqing"
                     }
                 ],
                 lists: [

@@ -9,6 +9,11 @@
             </mt-header>
         </div>
         <div class="main">
+            <div v-show="text" style="position: absolute;top:.5rem;left:.9rem;z-index: 999;background: white;height: 3rem;width: 2rem;margin-top:.3rem;text-align: center;padding-top: .2rem;border: 1px solid #ededed;border-radius: .05rem">
+                <span style="display:block;margin-bottom: .1rem">开发不易，支持一下吧</span>
+                <img src="../../../public/imgs/pay.png" style="margin-bottom: .1rem;height: 2rem;width: 1.5rem"><br>
+                <button @click="text = false" style="background: #ededed;width: 1.5rem;height: .3rem;border-radius: .05rem">好的</button>
+            </div>
             <div class="main-mail">
                 <img :src="img" class="main-mail-img">
                 <div class="main-mail-right">
@@ -57,7 +62,7 @@
                 </div>
             </mt-cell-swipe>
             <mt-cell-swipe style="border-top: 1px solid #ededed;text-align: center;">
-                <div class="home-item" style="color: #7b8aa8;max-width: 100%">
+                <div class="home-item" style="color: #7b8aa8;max-width: 100%" @click="text = true">
                     <svg aria-hidden="true" class="msg-icon" style="margin: .15rem .1rem .15rem 1.15rem;">
                         <use xlink:href="#icon-shipin"></use>
                     </svg>
@@ -127,6 +132,7 @@
         name: "MailIn",
         data() {
             return {
+                text:false,
                 name: this.$route["query"]["name"],
                 img: this.$route["query"]["img"],
                 popupVisible: false

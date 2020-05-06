@@ -8,8 +8,13 @@
             </span>
         </div>
         <div class="main">
+            <div v-show="text" style="position: absolute;top:.5rem;left:.9rem;z-index: 999;background: white;height: 3rem;width: 2rem;margin-top:.3rem;text-align: center;padding-top: .2rem;border: 1px solid #ededed;border-radius: .05rem">
+                <span style="display:block;margin-bottom: .1rem">开发不易，支持一下吧</span>
+                <img src="../../../public/imgs/pay.png" style="margin-bottom: .1rem;height: 2rem;width: 1.5rem"><br>
+                <button @click="text = false" style="background: #ededed;width: 1.5rem;height: .3rem;border-radius: .05rem">好的</button>
+            </div>
             <mt-cell-swipe>
-                <div class="find-item">
+                <div class="find-item" @click="test">
                     <span class="find-item-icon">
                         <svg aria-hidden="true" class="icon">
                             <use xlink:href="#icon-pengyouquan"/>
@@ -68,6 +73,7 @@
         name: "Find",
         data() {
             return {
+                text: false,
                 form: [
                     {
                         content: "扫一扫",
@@ -122,6 +128,9 @@
             jump(link) {
                 this.$router.push({name: link});
             },
+            test() {
+                this.text = true
+            }
             // getForm(){
             //     axios.get('/js/find.json').then((res) =>{
             //         this.form = res.data.form

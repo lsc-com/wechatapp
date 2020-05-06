@@ -40,6 +40,7 @@
 
 <script>
     // import axios from 'axios'
+    // import {Toast} from 'mint-ui';
     export default {
         name: "Home",
         data() {
@@ -147,7 +148,9 @@
                 {
                     content: '删除该聊天',
                     style: {background: 'red', color: '#fff', lineHeight: '.8rem', padding: '0 .1rem'},
-                    handler: () => this.$messagebox('想删除？就不让你删，嘿嘿')
+                    handler: () =>
+                        this.$messagebox('您不是VIP用户不能执行此操作')
+
                 }
             ];
         },
