@@ -17,6 +17,7 @@
   <script type="text/javascript">
     document.addEventListener('plusready', function() {
       var webview = plus.webview.currentWebview();
+	  plus.navigator.setStatusBarStyle('dark');
       plus.key.addEventListener('backbutton', function() {
         webview.canBack(function(e) {
           if(e.canBack) {

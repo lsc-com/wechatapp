@@ -160,7 +160,9 @@
 
 <style scoped>
     @import "../../../public/css/mail.css";
-
+	.header{
+		background-color: #fff;
+	}
     .mint-header {
         background: #fff !important;
     }

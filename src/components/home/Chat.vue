@@ -8,7 +8,7 @@
                 <mt-button icon="more" slot="right" @click="information"></mt-button>
             </mt-header>
         </div>
-        <div class="main">
+        <div class="main" id="dialogue_box">
             <div class="main-chat" v-show="content">
                 <img class="main-chat-img" :src="img" alt="" width="30" height="30" @click="friendIn">
                 <span class="main-chat-content">{{content}}</span>
@@ -19,8 +19,12 @@
             </div>
         </div>
         <div class="footer">
-            <span class="chat-left-icon"><i class="iconfont icon-yuyin1"></i></span>
-            <input :class="chatInput" type="text" v-model="inputChat">
+            <span class="chat-left-icon" @click="yuyin = !yuyin">
+                <i class="iconfont icon-yuyin1" v-show="yuyin"></i>
+                <i class="iconfont icon-dazi" v-show="!yuyin"></i>
+            </span>
+            <input v-show="yuyin" :class="chatInput" type="text" v-model="inputChat" @keyup.enter="sended">
+            <div v-show="!yuyin" :class="chatInput" style="text-align: center;background: #fff"><span style="margin-top: .08rem;display: block" @click="fail">请按住说话</span></div>
             <span class="chat-right-icon"><i class="iconfont icon-biaoqing1"></i></span>
             <span class="chat-right-icon" v-show="addIcon"><i class="iconfont icon-tianjia"></i></span>
 			<div class="send-icon" v-show="sendIcon" @click="sended">发送</div>
@@ -29,6 +33,8 @@
 </template>
 
 <script>
+    import {Toast} from "mint-ui";
+
     export default {
         name: "Chat",
         data() {
@@ -39,6 +45,8 @@
                 filterFriend: [],
                 chatFriend: JSON.parse(window.localStorage.getItem('chatFriend_key') || '[]'),
                 inputChat: '',
+				timer:'',
+                yuyin: false
             }
         },
         computed: {
@@ -75,10 +83,10 @@
         methods: {
             information(){
                 this.$router.push({name: 'ChatIn',query: {
-                        name: this.name,
-                        img: this.img,
-                        content: this.$route["query"]["content"]
-                    }});
+					name: this.name,
+					img: this.img,
+					content: this.$route["query"]["content"]
+				}});
             },
             sended(){
                 var obj = {};
@@ -87,14 +95,14 @@
                 obj.content = this.inputChat
                 this.chatFriend.push(obj);
                 this.inputChat = ''
-                history.go(0)
+				this.timer = setInterval(this.filterFriends, 1);
             },
             friendIn() {
                 this.$router.push({name: 'MailIn',query: {
-                        name: this.name,
-                        img: this.img,
-                        content: this.$route["query"]["content"],
-                    }});
+					name: this.name,
+					img: this.img,
+					content: this.$route["query"]["content"],
+				}});
             },
             filterFriends(){
                 const _this = this
@@ -106,18 +114,38 @@
                     }
                 }
                 this.filterFriend = newArray
+				clearInterval(this.timer);
+				this.updated()
+            },
+			//每次页面渲染完之后滚动条在最底部
+			updated(){
+				this.$nextTick(function(){
+					var div = document.getElementById('dialogue_box');
+					div.scrollTop = 99999999999999999999999;
+				})
+			},
+            fail() {
+                Toast({
+                    message: 'VIP会员专享，可选择文字聊天',
+                    duration: 1000
+                });
+                this.updated()
             }
         },
         mounted() {
-            this.filterFriends()
-        }
+            this.timer = setInterval(this.filterFriends, 2);
+            // this.timer = setInterval(this.updated, 2);
+        },
+		beforeDestroy() {
+			clearInterval(this.timer);
+		}
     }
 </script>
 
 <style scoped>
 @import "../../../public/css/home.css";
 
-    .icon-yuyin1{
+    .icon-yuyin1,.icon-dazi{
         font-size: .29rem !important;
     }
     .icon-tianjia,.icon-biaoqing1{
@@ -127,4 +155,13 @@
     .chat-right-icon{
         margin-left: .05rem;
     }
+    .mint-toast is-placemiddle{
+        width: 70% !important;
+    }
+    .mint-toast-text{
+        width: 70% !important;
+    }
+.mint-toast{
+    width: 70% !important;
+}
 </style>
